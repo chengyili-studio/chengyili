@@ -1,0 +1,17 @@
+# SHA256SUMS — 乘异里 / Chengyili v0.1.7
+# 生成时间: 2026-11-08   校验方式: sha256sum -c SHA256SUMS.txt
+# 注意: 三平台 zip 会随版本更新变化，发布新版本后请重新生成本文件。
+
+a557584ea628aaee951c37f553c7c790ba08be68344c0a95166c9918316a48af  download/windows/Chengyili-Demo-win64.zip
+2cbec38524b23085882496e918fd6aa66f419d1cc757e1c5c90d5592a9fd3b98  download/macos/Chengyili-Demo-mac.zip
+6483e106f7e114ec8a911cf26af0f68830b446c0fc3c3c30e194fe1fc35f7709  download/linux/Chengyili-Demo-linux.zip
+9081591f61d50f39898990fe8aca0ac56b19552ccd982e89868b7879f42ae37e  download/web/index.pck
+5f424353884e68cd480a813678be02e0e4525531764c36002980c1c2c927b0da  download/web/index.wasm
+e64ece20a0e0e4130dd8fd7cc8399ceb4133864f36586c8d2e33e0200a00d7ea  download/web/index.js
+9f27b4a829898606b7d514a06a2df08df85807e114582d0914595a1c0794e725  download/web/index.html
+5b476a9c9ce642c0ee4256436d1bc31d9c38f868aca0f9a8e2a57c18d2dec2a3  download/web/index.audio.worklet.js
+be33985bc7160d6bf9646f259cd86b259cd67b02ccb297ee5c44f8ac84327bc8  download/web/index.audio.position.worklet.js
+3cb4495c0b98dfbe4b663cbf2b6836473572339beb66d902367893162a70be0e  download/web/index.png
+998e14c04c9c5c04533a8c643882176b2cdaac68ba451268b831cf2c69445531  download/web/index.icon.png
+2c66e75cbf32fa55e4cee3a14952495888dfa1c6313fa37cd1bb33d4b84704a5  download/web/index.apple-touch-icon.png
+（内容由AI生成，仅供参考）
