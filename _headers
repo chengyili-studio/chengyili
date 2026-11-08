@@ -1,0 +1,84 @@
+# _headers — Cloudflare Pages / Netlify 通用语法
+# 规则自上而下叠加，同名头以更靠后的规则为准（更具体的路径请靠后）
+
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), microphone=(), camera=()
+
+# ---------- 静态资源缓存 ----------
+/css/*
+  Cache-Control: public, max-age=86400
+
+/js/*
+  Cache-Control: public, max-age=86400
+
+/assets/*
+  Cache-Control: public, max-age=604800
+
+# ---------- 安装包：强制下载 + 一年期不可变缓存 ----------
+/download/windows/*
+  Content-Disposition: attachment
+  Cache-Control: public, max-age=31536000, immutable
+  X-Content-Type-Options: nosniff
+
+/download/macos/*
+  Content-Disposition: attachment
+  Cache-Control: public, max-age=31536000, immutable
+  X-Content-Type-Options: nosniff
+
+/download/linux/*
+  Content-Disposition: attachment
+  Cache-Control: public, max-age=31536000, immutable
+  X-Content-Type-Options: nosniff
+
+# ---------- Web 在线试玩：必须 inline，切不可加 attachment ----------
+# 若给 /download/web/* 加 attachment，浏览器会下载 HTML 而不是渲染，
+# Godot 网页版将无法在浏览器内运行。
+/download/web/*
+  Content-Disposition: inline
+  Cache-Control: public, max-age=3600
+
+/download/web/index.html
+  Content-Type: text/html; charset=utf-8
+  Cache-Control: public, max-age=600
+
+/download/web/index.js
+  Content-Type: application/javascript; charset=utf-8
+  Cache-Control: public, max-age=3600
+
+/download/web/index.audio.worklet.js
+  Content-Type: application/javascript; charset=utf-8
+  Cache-Control: public, max-age=3600
+
+/download/web/index.audio.position.worklet.js
+  Content-Type: application/javascript; charset=utf-8
+  Cache-Control: public, max-age=3600
+
+# Godot Web 构建的 wasm 必须显式声明 MIME，否则编译失败
+/download/web/index.wasm
+  Content-Type: application/wasm
+  Content-Disposition: inline
+  Cache-Control: public, max-age=31536000, immutable
+
+/download/web/index.pck
+  Content-Type: application/octet-stream
+  Content-Disposition: inline
+  Cache-Control: public, max-age=31536000, immutable
+
+/download/web/index.png
+  Content-Type: image/png
+  Cache-Control: public, max-age=604800
+
+/download/web/index.icon.png
+  Content-Type: image/png
+  Cache-Control: public, max-age=604800
+
+/download/web/index.apple-touch-icon.png
+  Content-Type: image/png
+  Cache-Control: public, max-age=604800
+
+# ---------- 兜底：任意 wasm 一律 application/wasm ----------
+*.wasm
+  Content-Type: application/wasm
