@@ -1,0 +1,150 @@
+/* ==========================================================================
+   乘异里 · HUD 动态增强层 (hud-fx)
+   仅做动效与氛围叠加，不改动 style.css 的版式与配色基线。
+   全部动效尊重 prefers-reduced-motion。
+   ========================================================================== */
+
+:root{
+  --fx-o:#ff7a2f;
+  --fx-c:#31cfdf;
+}
+
+/* ---------------------------------------------------------- 1. 指针光斑 */
+.fx-glow{
+  position:fixed;inset:0;z-index:1;pointer-events:none;
+  background:
+    radial-gradient(300px circle at var(--mx,50%) var(--my,26%),rgba(255,122,47,.085),transparent 68%),
+    radial-gradient(200px circle at var(--mx,50%) var(--my,26%),rgba(49,207,223,.05),transparent 72%);
+  mix-blend-mode:screen;
+  transition:opacity .5s var(--e-out);
+  opacity:0
+}
+body.fx-ready .fx-glow{opacity:1}
+
+/* -------------------------------------------------- 2. 全息环视差与读数 */
+.hud{
+  transform:translate3d(var(--hx,0px),calc(-50% + var(--hy,0px)),0);
+  transition:transform .55s cubic-bezier(.22,1,.36,1);
+  will-change:transform
+}
+.hud-xy{
+  position:absolute;right:7%;bottom:7%;left:auto;top:auto;transform:none;
+  display:flex;flex-direction:row;align-items:center;gap:7px;
+  font-family:var(--f-mono);font-size:9px;letter-spacing:.2em;
+  color:rgba(158,196,228,.78);pointer-events:none;text-align:right;white-space:nowrap
+}
+.hud-xy b{color:rgba(255,122,47,.92);font-weight:400;letter-spacing:.12em}
+.hud-xy i{font-style:normal;color:rgba(49,207,223,.8)}
+
+/* ---------------------------------------------------- 3. 标题光带流动 */
+.hero h1{
+  background-size:220% 100%;
+  background-position:0 0;
+  animation:titleFlow 11s var(--e-inout) infinite
+}
+@keyframes titleFlow{
+  0%,100%{background-position:0 0}
+  50%{background-position:100% 0}
+}
+
+/* -------------------------------------------------- 4. 数据条扫描进度 */
+.hero-stats{overflow:hidden}
+.hero-stats::after{
+  content:"";position:absolute;left:0;bottom:0;height:1px;width:38%;
+  background:linear-gradient(90deg,transparent,rgba(49,207,223,.85),transparent);
+  animation:statScan 5.4s var(--e-inout) infinite;pointer-events:none
+}
+@keyframes statScan{
+  0%{transform:translateX(-110%);opacity:0}
+  16%{opacity:1}
+  84%{opacity:1}
+  100%{transform:translateX(320%);opacity:0}
+}
+
+/* -------------------------------------------- 5. 卡片四角 HUD 括号（JS 注入） */
+.cnr{
+  position:absolute;width:12px;height:12px;z-index:3;pointer-events:none;
+  border:1px solid rgba(255,122,47,.85);opacity:0;
+  transition:opacity .35s var(--e-out),transform .35s var(--e-out)
+}
+.cnr.tl{left:-1px;top:-1px;border-right:0;border-bottom:0;transform:translate(-4px,-4px)}
+.cnr.tr{right:-1px;top:-1px;border-left:0;border-bottom:0;transform:translate(4px,-4px)}
+.cnr.bl{left:-1px;bottom:-1px;border-right:0;border-top:0;transform:translate(-4px,4px)}
+.cnr.br{right:-1px;bottom:-1px;border-left:0;border-top:0;transform:translate(4px,4px)}
+.card:hover .cnr,.dl:hover .cnr{opacity:1;transform:translate(0,0)}
+
+/* ------------------------------------------------- 6. 下载卡内部扫描线 */
+.dl-scan{
+  position:absolute;left:0;right:0;top:0;height:1px;z-index:4;pointer-events:none;
+  background:linear-gradient(90deg,transparent,rgba(49,207,223,.75),transparent);
+  opacity:0
+}
+.dl:hover .dl-scan{animation:dlScan 1.05s var(--e-out) 1}
+@keyframes dlScan{
+  0%{opacity:0;transform:translateY(0)}
+  12%{opacity:.9}
+  100%{opacity:0;transform:translateY(360px)}
+}
+
+/* --------------------------------------------- 7. 表格行入场上浮（JS 打点） */
+.tbl tbody tr{
+  opacity:1;transition:opacity .5s var(--e-out),transform .5s var(--e-out)
+}
+body.fx-tbl-armed .tbl tbody tr{opacity:0;transform:translateY(10px)}
+body.fx-tbl-armed .tbl tbody tr.in{opacity:1;transform:none;
+  transition-delay:calc(var(--i,0) * 45ms)}
+
+/* --------------------------------------------------- 8. 右侧滚动刻度尺 */
+.sec-rail{
+  position:fixed;right:18px;top:50%;transform:translateY(-50%);z-index:60;
+  display:none;flex-direction:column;gap:10px;pointer-events:auto;
+  font-family:var(--f-mono);font-size:8px;letter-spacing:.2em
+}
+@media (min-width:1180px){ body.fx-ready .sec-rail{display:flex} }
+.sec-rail a{
+  display:flex;align-items:center;gap:8px;justify-content:flex-end;
+  color:rgba(126,163,200,.45);text-decoration:none;
+  transition:color .3s var(--e-out)
+}
+.sec-rail a span{
+  opacity:0;transform:translateX(6px);transition:opacity .3s var(--e-out),transform .3s var(--e-out);
+  white-space:nowrap
+}
+.sec-rail a::before{
+  content:"";width:14px;height:1px;background:currentColor;flex:none;
+  transition:width .35s var(--e-out),background .35s
+}
+.sec-rail a:hover,.sec-rail a.on{color:var(--fx-o)}
+.sec-rail a:hover::before,.sec-rail a.on::before{width:26px;
+  box-shadow:0 0 10px rgba(255,122,47,.8)}
+.sec-rail a:hover span,.sec-rail a.on span{opacity:1;transform:none}
+
+/* ------------------------------------------------ 9. 顶部滚动进度端点光点 */
+.scrollbar::after{
+  content:"";position:absolute;right:0;top:-1px;width:6px;height:6px;border-radius:50%;
+  background:var(--fx-o);box-shadow:0 0 12px var(--fx-o);
+  animation:pulse 2.4s var(--e-inout) infinite
+}
+
+/* ---------------------------------------- 10. 背景网格随滚动的分层视差 */
+.bd-grid,.bd-grid-2{transition:background-position .75s var(--e-out)}
+body.fx-ready .bd-grid{
+  background-position:calc(var(--sy,0) * -0.09px) calc(var(--sy,0) * 0.05px)
+}
+body.fx-ready .bd-grid-2{
+  background-position:calc(var(--sy,0) * 0.22px) calc(var(--sy,0) * -0.08px)
+}
+
+/* --------------------------------------------------------- 降级与兼容 */
+@media (prefers-reduced-motion:reduce){
+  .fx-glow,.sec-rail,.dl-scan,.hero-stats::after{display:none!important}
+  .hero h1{animation:none!important}
+  .hud{transform:translateY(-50%)!important;transition:none!important}
+  .cnr{transition:none}
+  body.fx-tbl-armed .tbl tbody tr{opacity:1;transform:none}
+  .scrollbar::after{animation:none}
+}
+@media (hover:none){
+  .cnr{opacity:.5}
+  .dl-scan{display:none}
+}
