@@ -244,3 +244,7 @@ section { padding: 84px 0; position: relative; }
   .credits-list .k { font-size: 12px; letter-spacing: .1em; }
   .credits-list .v { font-size: 13px; }
 }
+
+/* 国内镜像线路按钮 */
+.dl-card .btn-mirror { margin-top: 8px; font-size: 13px; padding: 10px 16px; background: rgba(255,255,255,.03); }
+.dl-card .btn-mirror:hover { background: rgba(0,229,255,.08); }
