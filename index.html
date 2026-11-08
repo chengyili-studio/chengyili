@@ -6,231 +6,327 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>乘异里 · 即时策略多人竞技网络游戏 — 官方下载</title>
 <meta name="description" content="乘异里 Demo：以即时策略与多人竞技为核心，辅以模拟经营与养成。网络游戏，需官方开服后方可登录。Windows / macOS / Linux / Web 全平台下载。" />
+<meta name="color-scheme" content="dark" />
 <link rel="icon" type="image/png" href="assets/img/favicon.png" />
 <link rel="apple-touch-icon" href="assets/img/favicon.png" />
 <meta name="theme-color" content="#05080e" />
 <link rel="stylesheet" href="css/style.css" />
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="乘异里 CHENGYILI" />
+<meta property="og:title" content="乘异里 · 即时策略多人竞技网络游戏 — 官方下载" />
+<meta property="og:description" content="以即时策略与多人竞技为核心，辅以模拟经营与养成。Windows / macOS / Linux 全平台下载，内置自动更新器。" />
+<meta property="og:image" content="https://chengyili.pages.dev/assets/img/hero.webp" />
+<meta property="og:url" content="https://chengyili.pages.dev/" />
+<link rel="canonical" href="https://chengyili.pages.dev/" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="乘异里 · 官方下载" />
+<meta name="twitter:description" content="即时策略 × 多人竞技 × 模拟经营。全平台客户端下载。" />
+<meta name="twitter:image" content="https://chengyili.pages.dev/assets/img/hero.webp" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "乘异里",
+  "alternateName": "Chengyili",
+  "applicationCategory": "GameApplication",
+  "operatingSystem": "Windows, macOS, Linux",
+  "softwareVersion": "0.1.7",
+  "inLanguage": "zh-CN",
+  "description": "以即时策略与多人竞技为核心的网络游戏，辅以模拟经营与养成。需官方开服后方可登录。",
+  "publisher": {"@type": "Organization", "name": "思茅区乘异里游戏工作室"},
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "CNY"}
+}
+</script>
 </head>
 <body>
+<a class="skip-link" href="#download">跳到下载</a>
 
-<!-- 背景层 -->
-<div class="site-bg" aria-hidden="true">
-  <div class="bg-grid"></div>
-  <div class="bg-au au1"></div>
-  <div class="bg-au au2"></div>
-  <div class="bg-au au3"></div>
-  <div class="bg-scan"></div>
-  <div class="bg-sweep"></div>
-  <div class="bg-noise"></div>
-  <div class="bg-vig"></div>
+<!-- ========== 背景层 ========== -->
+<div class="backdrop" aria-hidden="true">
+  <div class="bd-base"></div>
+  <div class="bd-grid"></div>
+  <div class="bd-grid-2"></div>
+  <div class="bd-aurora a1"></div>
+  <div class="bd-aurora a2"></div>
+  <div class="bd-aurora a3"></div>
+  <div class="bd-beam"></div>
+  <div class="bd-scan"></div>
+  <div class="bd-noise"></div>
+  <div class="bd-vignette"></div>
+  <div class="bd-corners"><span></span></div>
 </div>
 
-<!-- NAV -->
+<div class="scrollbar" id="scrollbar" aria-hidden="true"></div>
+
+<!-- ========== 顶部信息带 ========== -->
+<div class="topbar" aria-hidden="true">
+  <div class="mq">
+    <span>
+      <b>BUILD v0.1.7 ONLINE</b><i>/</i>NETWORK GAME · 需官方开服<i>/</i>WIN · MACOS · LINUX<i>/</i>SHA256 VERIFIED<i>/</i>QQ 内测群 3828328643<i>/</i>CHENGYILI STUDIO<i>/</i>
+    </span>
+    <span>
+      <b>BUILD v0.1.7 ONLINE</b><i>/</i>NETWORK GAME · 需官方开服<i>/</i>WIN · MACOS · LINUX<i>/</i>SHA256 VERIFIED<i>/</i>QQ 内测群 3828328643<i>/</i>CHENGYILI STUDIO<i>/</i>
+    </span>
+  </div>
+</div>
+
+<!-- ========== 导航 ========== -->
 <header class="nav" id="nav">
   <div class="wrap nav-inner">
     <a class="brand" href="#home">
-      <img src="assets/img/logo.png" alt="乘异里" />
-      <span>
-        <span class="name">乘异里</span><br />
-        <span class="sub">CHENGYILI</span>
+      <span class="brand-logo"><img src="assets/img/logo.png" alt="乘异里" /></span>
+      <span class="brand-txt">
+        <span class="n">乘异里</span>
+        <span class="s">CHENGYILI</span>
       </span>
     </a>
     <nav class="nav-links">
-      <a href="#world"><em>01</em>世界</a>
-      <a href="#features"><em>02</em>玩法</a>
-      <a href="#download"><em>03</em>下载</a>
-      <a href="#changelog"><em>04</em>更新</a>
-      <span class="ver-pill">v0.1.7</span>
+      <a href="#world"><span class="k">01</span>世界</a>
+      <a href="#features"><span class="k">02</span>玩法</a>
+      <a href="#download"><span class="k">03</span>下载</a>
+      <a href="#changelog"><span class="k">04</span>更新</a>
     </nav>
+    <span class="ver">v0.1.7</span>
   </div>
 </header>
 
-<!-- HERO -->
+<!-- ========== HERO ========== -->
 <section class="hero" id="home">
-  <div class="hero-bg">
-    <img src="assets/img/hero.webp" alt="乘异里 主视觉" />
+  <div class="hero-media" aria-hidden="true">
+    <img src="assets/img/hero.webp" alt="" fetchpriority="high" />
   </div>
 
-  <div class="hud-ring" aria-hidden="true">
-    <div class="rr r1"></div>
-    <div class="rr r2"></div>
-    <div class="rr r3"></div>
-    <div class="rr r4"></div>
-    <div class="rr radar"></div>
-    <div class="rr core">CGY</div>
-    <div class="dtag d1">PEACELIVES</div>
-    <div class="dtag d2">HMCP 72H</div>
-    <div class="dtag d3">NODE ONLINE</div>
-    <div class="dtag d4">CHANG-SHIJIE</div>
+  <div class="hud" aria-hidden="true">
+    <div class="hud-ring r1"></div>
+    <div class="hud-ring r2"></div>
+    <div class="hud-ticks"></div>
+    <div class="hud-ticks b"></div>
+    <div class="hud-dash"></div>
+    <div class="hud-arc"></div>
+    <div class="hud-arc b"></div>
+    <div class="hud-radar"></div>
+    <div class="hud-core">CGY</div>
+    <div class="hud-tag t1">PEACELIVES</div>
+    <div class="hud-tag t2">HMCP 72H</div>
+    <div class="hud-tag t3">NODE ONLINE</div>
+    <div class="hud-tag t4">CHANG-SHIJIE</div>
+  </div>
+
+  <div class="hero-scale" aria-hidden="true">
+    <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+    <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
   </div>
 
   <div class="wrap hero-inner">
-    <span class="tag">即时策略 · 多人竞技 · 模拟经营 · 养成</span>
-    <h1>乘异里<span>CHENGYILI / CHANG-SHIJIE</span></h1>
-    <div class="hl-line"></div>
-    <p class="lead">在常世界的全球据点上布防，遥控你装配的雇员实时出战；打竞技排位、抢据点、谈租约，用战绩换取更高的存在价值。</p>
+    <div class="hero-eyebrow">
+      <span class="chip"><span class="dot"></span>NETWORK GAME</span>
+      <span class="chip c">DEMO v0.1.7</span>
+    </div>
+
+    <h1>乘异里<span class="sub">CHENGYILI / CHANG-SHIJIE</span></h1>
+    <div class="hero-rule"></div>
+
+    <p class="hero-lead">在常世界的全球据点上布防，遥控你装配的雇员实时出战；打竞技排位、抢据点、谈租约，用战绩换取更高的存在价值。</p>
+
     <div class="cta-row">
-      <a class="btn btn-primary" href="https://github.com/chengyili-studio/chengyili/releases/download/v0.1.7/Chengyili-Demo-win64.zip">下载游戏</a>
+      <a class="btn btn-primary" href="https://github.com/chengyili-studio/chengyili/releases/download/v0.1.7/Chengyili-Demo-win64.zip">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-4.5-4.5M12 15l4.5-4.5M4 19h16"/></svg>
+        下载游戏
+      </a>
       <a class="btn btn-ghost btn-mirror" href="https://1846173796.share.123pan.cn/123pan/UQM6Td-UZyih" target="_blank" rel="noopener">国内线路（123 云盘）</a>
       <a class="btn btn-ghost" href="#features">了解玩法</a>
     </div>
-    <div class="hero-meta">
-      <span><b>最新版本</b>v0.1.7</span>
-      <span><b>平台</b>Win / macOS / Linux / Web</span>
-      <span><b>更新</b>内置自动更新器</span>
-      <span><b>登录</b>需官方开服</span>
+
+    <div class="hero-stats">
+      <div class="st"><span class="k">LATEST</span><span class="v">v0.1.7</span></div>
+      <div class="st"><span class="k">PLATFORM</span><span class="v">Win / macOS / Linux / Web</span></div>
+      <div class="st"><span class="k">UPDATER</span><span class="v">内置自动更新器</span></div>
+      <div class="st"><span class="k">LOGIN</span><span class="v">需官方开服</span></div>
     </div>
   </div>
 </section>
 
-<!-- WORLD -->
-<section id="world">
+<!-- ========== WORLD ========== -->
+<section class="sec" id="world">
   <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="kicker">WORLD SETTING</span>
-      <h2>世界设定<em>THE NET</em></h2>
+    <div class="sec-head" data-reveal>
+      <span class="bg-num">01</span>
+      <span class="chip kicker">WORLD SETTING</span>
+      <h2>世界设定<span class="en">THE NET</span></h2>
+      <p>母星早已把人类划进养殖计划，一部分人不肯被养，于是有了大分裂。此后他们活在「网」里，把身体留在营养仓，用机械出门。以下设定对应 v0.1.7 版本内容。</p>
     </div>
-    <p class="cg-sec-sub reveal">母星早已把人类划进养殖计划，一部分人不肯被养，于是有了大分裂。此后他们活在「网」里，
-    把身体留在营养仓，用机械出门。以下设定对应 v0.1.7 版本内容。</p>
 
-    <div class="cg-grid">
-      <div class="cg-card reveal">
-        <span class="cg-tag">常世界</span>
+    <div class="grid cols-3">
+      <article class="card" data-reveal>
+        <span class="spot"></span>
+        <div class="tag-row"><span class="chip">常世界</span></div>
         <h3>网与常世界</h3>
-        <p>国民的意识接入高度网格化的常世界，起居、竞技、任务都在网内完成。「乘异里」是网中的一处地名，
-        也是你要踏进去的那片场地。</p>
-      </div>
-      <div class="cg-card reveal">
-        <span class="cg-tag">势力</span>
+        <p>国民的意识接入高度网格化的常世界，起居、竞技、任务都在网内完成。「乘异里」是网中的一处地名，也是你要踏进去的那片场地。</p>
+      </article>
+      <article class="card" data-reveal>
+        <span class="spot"></span>
+        <div class="tag-row"><span class="chip">势力</span></div>
         <h3>和平国 PeaceLives</h3>
-        <p>大分裂后抵制的那个叛逆国度。它主动放弃长生、拒绝人类养殖，代价是人口锐减——
-        国家运转全靠国民把大脑算力租出来。</p>
-      </div>
-      <div class="cg-card reveal">
-        <span class="cg-tag">身份</span>
+        <p>大分裂后抵制的那个叛逆国度。它主动放弃长生、拒绝人类养殖，代价是人口锐减——国家运转全靠国民把大脑算力租出来。</p>
+      </article>
+      <article class="card" data-reveal>
+        <span class="spot"></span>
+        <div class="tag-row"><span class="chip">身份</span></div>
         <h3>你是一名研发者</h3>
-        <p>PeaceLives 子民繁衍的子嗣，经重生院「抚平大脑褶皱」重构记忆后出生。没有固定宿舍，自己租；
-        本体躺在营养仓里，靠遥控自己装配的机械外出作战——那台机械叫「雇员」。</p>
-      </div>
-      <div class="cg-card reveal">
-        <span class="cg-tag">经济</span>
+        <p>PeaceLives 子民繁衍的子嗣，经重生院「抚平大脑褶皱」重构记忆后出生。没有固定宿舍，自己租；本体躺在营养仓里，靠遥控自己装配的机械外出作战——那台机械叫「雇员」。</p>
+      </article>
+      <article class="card" data-reveal>
+        <span class="spot"></span>
+        <div class="tag-row"><span class="chip">经济</span></div>
         <h3>存在价值</h3>
-        <p>算力租给国家，国家按你的「存在价值」回拨配额。装配机械 → 遥控出战 → 赢 → 存在价值上升 →
-        算力配额提高 → 更好的装备与权限 → 再装配更强的机械。</p>
-      </div>
-      <div class="cg-card reveal">
-        <span class="cg-tag">四阵营</span>
+        <p>算力租给国家，国家按你的「存在价值」回拨配额。装配机械 → 遥控出战 → 赢 → 存在价值上升 → 算力配额提高 → 更好的装备与权限 → 再装配更强的机械。</p>
+      </article>
+      <article class="card" data-reveal>
+        <span class="spot"></span>
+        <div class="tag-row"><span class="chip">四阵营</span></div>
         <h3>岛上的四方</h3>
-        <p>白夜旅：地下魔都，魔王阿诺暮坐镇。<br>复安：睡童·女大陆，中世纪战乱未平。<br>
-        和平：异常灾害联合研究所与对策局。<br>腐化：军事区，把国民推进矿化当作晶体提取与活体武器。</p>
-      </div>
-      <div class="cg-card reveal">
-        <span class="cg-tag">灾害</span>
+        <p>白夜旅：地下魔都，魔王阿诺暮坐镇。<br />复安：睡童·女大陆，中世纪战乱未平。<br />和平：异常灾害联合研究所与对策局。<br />腐化：军事区，把国民推进矿化当作晶体提取与活体武器。</p>
+      </article>
+      <article class="card" data-reveal>
+        <span class="spot"></span>
+        <div class="tag-row"><span class="chip">灾害</span></div>
         <h3>HMCP 与「物灵」</h3>
-        <p>铪码勒柯钯斯晶体替代生物分子键，<b>72 小时</b>后不可逆嵌合。复安人口中的「物灵」，
-        其实是被晶体嵌合的死物。纤维化分侵蚀／织变／矿化三期；处置靠除湿、骤冷脆化与 16.7Hz 共振干扰。</p>
-      </div>
+        <p>铪码勒柯钯斯晶体替代生物分子键，<b>72 小时</b>后不可逆嵌合。复安人口中的「物灵」，其实是被晶体嵌合的死物。纤维化分侵蚀／织变／矿化三期；处置靠除湿、骤冷脆化与 16.7Hz 共振干扰。</p>
+      </article>
     </div>
 
-    <table class="cg-table reveal">
-      <thead><tr><th>任务</th><th>做什么</th><th>产出</th></tr></thead>
-      <tbody>
-        <tr><td>检测 · detect</td><td>180 秒时限，存活 30 秒判成，有概率发现异常</td><td>信用点</td></tr>
-        <tr><td>围剿 · suppress</td><td>按风险等级 1–5 清除危害场</td><td>再生资源 + 信用点</td></tr>
-        <tr><td>取样 · crystal</td><td>在采集点取回晶体样本，风险越高耗时越长</td><td>再生 / 非再生资源 + 信用点</td></tr>
-      </tbody>
-    </table>
-    <p class="cg-note reveal">风险越高的点，装置衰减倍率越高，奖励也越厚——刷哪个点，本质是在拿存在价值换风险。</p>
+    <div class="table-wrap" data-reveal>
+      <table class="tbl">
+        <thead><tr><th>任务</th><th>做什么</th><th>产出</th></tr></thead>
+        <tbody>
+          <tr><td>检测 · detect</td><td>180 秒时限，存活 30 秒判成，有概率发现异常</td><td>信用点</td></tr>
+          <tr><td>围剿 · suppress</td><td>按风险等级 1–5 清除危害场</td><td>再生资源 + 信用点</td></tr>
+          <tr><td>取样 · crystal</td><td>在采集点取回晶体样本，风险越高耗时越长</td><td>再生 / 非再生资源 + 信用点</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note" data-reveal>风险越高的点，装置衰减倍率越高，奖励也越厚——刷哪个点，本质是在拿存在价值换风险。</div>
   </div>
 </section>
 
-<!-- FEATURES -->
-<section id="features">
+<!-- ========== FEATURES ========== -->
+<section class="sec" id="features">
   <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="kicker">CORE LOOP</span>
-      <h2>核心玩法<em>GAMEPLAY</em></h2>
+    <div class="sec-head" data-reveal>
+      <span class="bg-num">02</span>
+      <span class="chip kicker">CORE LOOP</span>
+      <h2>核心玩法<span class="en">GAMEPLAY</span></h2>
     </div>
-    <div class="cg-genres">
-      <div class="cg-genre reveal"><b>即时策略</b><span class="main">主</span></div>
-      <div class="cg-genre reveal"><b>多人竞技</b><span class="main">主</span></div>
-      <div class="cg-genre reveal"><b>模拟经营</b><span>副</span></div>
-      <div class="cg-genre reveal"><b>养成</b><span>副</span></div>
+    <div class="genres">
+      <div class="genre primary" data-reveal><span class="spot"></span><span class="n">即时策略</span><span class="lvl">主 · PRIMARY</span></div>
+      <div class="genre primary" data-reveal><span class="spot"></span><span class="n">多人竞技</span><span class="lvl">主 · PRIMARY</span></div>
+      <div class="genre" data-reveal><span class="spot"></span><span class="n">模拟经营</span><span class="lvl">副 · SECONDARY</span></div>
+      <div class="genre" data-reveal><span class="spot"></span><span class="n">养成</span><span class="lvl">副 · SECONDARY</span></div>
     </div>
   </div>
 </section>
 
-<!-- DOWNLOAD -->
-<section id="download">
+<!-- ========== DOWNLOAD ========== -->
+<section class="sec" id="download">
   <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="kicker">DOWNLOAD</span>
-      <h2>下载游戏<em>CLIENT</em></h2>
-      <div class="cg-online">
-        <b>网络游戏</b>　本作需连接官方服务器，由官方开服后方可登录进入常世界；下载安装不等于可立即游玩，单机模式下无法开局。
-      </div>
+    <div class="sec-head" data-reveal>
+      <span class="bg-num">03</span>
+      <span class="chip kicker">DOWNLOAD</span>
+      <h2>下载游戏<span class="en">CLIENT</span></h2>
+      <div class="online-banner"><b>网络游戏</b>　本作需连接官方服务器，由官方开服后方可登录进入常世界；下载安装不等于可立即游玩，单机模式下无法开局。</div>
       <p>选择你的平台。首次下载后，启动器会自动拉取最新补丁，无需重复下载完整包。</p>
     </div>
-    <div class="cg-uatip" id="cg-uatip"></div>
+
+    <div class="uatip" id="uatip"></div>
+
     <div class="dl-grid">
 
-      <div class="dl-card reveal">
-        <div class="dl-top">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 5h8v8H3zM13 5h8v8h-8zM3 13h8v8H3zM13 13h8v8h-8z"/></svg>
-          <div><div class="t">Windows</div><div class="a">64-BIT · EXE</div></div>
+      <article class="dl reveal" data-os="win">
+        <span class="spot"></span>
+        <div class="dl-head">
+          <span class="dl-ico">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 5h8v8H3zM13 5h8v8h-8zM3 13h8v8H3zM13 13h8v8h-8z"/></svg>
+          </span>
+          <span class="dl-title"><span class="n">Windows</span><span class="a">64-BIT · EXE · ZIP</span></span>
         </div>
-        <div class="dl-size">大小 <b id="sz-win">94.5 MB</b></div>
-        <div class="cg-meta">v0.1.7 · 免安装，解压后需官方开服方可登录<br>SHA256 <code>A557584E…48AF</code><button class="cg-copy" type="button" data-copy="A557584EA628AAEE951C37F553C7C790BA08BE68344C0A95166C9918316A48AF">复制</button></div>
-        <a class="btn btn-primary" href="https://github.com/chengyili-studio/chengyili/releases/download/v0.1.7/Chengyili-Demo-win64.zip">下载 Windows 版</a>
-        <a class="btn btn-ghost btn-mirror" href="https://1846173796.share.123pan.cn/123pan/UQM6Td-UZyih" target="_blank" rel="noopener">国内线路（123 云盘）</a>
-      </div>
+        <div class="dl-body">
+          <div class="dl-size">SIZE <b id="sz-win">94.5 MB</b></div>
+          <div class="dl-meta">v0.1.7 · 免安装，解压后需官方开服方可登录<br />SHA256 <code>A557584E…48AF</code><button class="copy" type="button" data-copy="A557584EA628AAEE951C37F553C7C790BA08BE68344C0A95166C9918316A48AF">复制</button></div>
+        </div>
+        <div class="dl-actions">
+          <a class="btn btn-primary" href="https://github.com/chengyili-studio/chengyili/releases/download/v0.1.7/Chengyili-Demo-win64.zip">下载 Windows 版</a>
+          <a class="btn btn-ghost btn-mirror" href="https://1846173796.share.123pan.cn/123pan/UQM6Td-UZyih" target="_blank" rel="noopener">国内线路（123 云盘）</a>
+        </div>
+      </article>
 
-      <div class="dl-card reveal">
-        <div class="dl-top">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.4 12.6c0-2 1.6-3 1.7-3.1-1-1.4-2.4-1.6-2.9-1.6-1.2-.1-2.4.7-3 .7-.6 0-1.6-.7-2.6-.7-1.3 0-2.6.8-3.3 2-1.4 2.4-.4 6 1 8 .7 1 1.4 2 2.5 2 1 0 1.3-.6 2.5-.6 1.1 0 1.5.6 2.5.6 1 0 1.7-1 2.3-2 .7-1.1 1-2.2 1-2.3-.1 0-2-.8-2-3.1zM14.5 6.3c.5-.7.9-1.6.8-2.5-.8 0-1.7.5-2.3 1.2-.5.6-.9 1.5-.8 2.4.9.1 1.7-.5 2.3-1.1z"/></svg>
-          <div><div class="t">macOS</div><div class="a">UNIVERSAL / INTEL</div></div>
+      <article class="dl reveal" data-os="mac">
+        <span class="spot"></span>
+        <div class="dl-head">
+          <span class="dl-ico">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.4 12.6c0-2 1.6-3 1.7-3.1-1-1.4-2.4-1.6-2.9-1.6-1.2-.1-2.4.7-3 .7-.6 0-1.6-.7-2.6-.7-1.3 0-2.6.8-3.3 2-1.4 2.4-.4 6 1 8 .7 1 1.4 2 2.5 2 1 0 1.3-.6 2.5-.6 1.1 0 1.5.6 2.5.6 1 0 1.7-1 2.3-2 .7-1.1 1-2.2 1-2.3-.1 0-2-.8-2-3.1zM14.5 6.3c.5-.7.9-1.6.8-2.5-.8 0-1.7.5-2.3 1.2-.5.6-.9 1.5-.8 2.4.9.1 1.7-.5 2.3-1.1z"/></svg>
+          </span>
+          <span class="dl-title"><span class="n">macOS</span><span class="a">UNIVERSAL / INTEL</span></span>
         </div>
-        <div class="dl-size">大小 <b id="sz-mac">194 MB</b></div>
-        <div class="cg-meta">v0.1.7 · Universal 通用二进制：Apple Silicon 与 Intel 同一个包，无需挑选。<br>首次启动若提示「无法验证开发者」，右键图标 → 打开<br>SHA256 <code>2CBEC385…3B98</code><button class="cg-copy" type="button" data-copy="2CBEC38524B23085882496E918FD6AA66F419D1CC757E1C5C90D5592A9FD3B98">复制</button></div>
-        <a class="btn btn-primary" href="https://github.com/chengyili-studio/chengyili/releases/download/v0.1.7/Chengyili-Demo-mac.zip">下载 macOS 版</a>
-        <a class="btn btn-ghost btn-mirror" href="https://1846173796.share.123pan.cn/123pan/UQM6Td-eDUzh" target="_blank" rel="noopener">国内线路（123 云盘）</a>
-      </div>
+        <div class="dl-body">
+          <div class="dl-size">SIZE <b id="sz-mac">194 MB</b></div>
+          <div class="dl-meta">v0.1.7 · Universal 通用二进制：Apple Silicon 与 Intel 同一个包，无需挑选。<br />首次启动若提示「无法验证开发者」，右键图标 → 打开<br />SHA256 <code>2CBEC385…3B98</code><button class="copy" type="button" data-copy="2CBEC38524B23085882496E918FD6AA66F419D1CC757E1C5C90D5592A9FD3B98">复制</button></div>
+        </div>
+        <div class="dl-actions">
+          <a class="btn btn-primary" href="https://github.com/chengyili-studio/chengyili/releases/download/v0.1.7/Chengyili-Demo-mac.zip">下载 macOS 版</a>
+          <a class="btn btn-ghost btn-mirror" href="https://1846173796.share.123pan.cn/123pan/UQM6Td-eDUzh" target="_blank" rel="noopener">国内线路（123 云盘）</a>
+        </div>
+      </article>
 
-      <div class="dl-card reveal">
-        <div class="dl-top">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3c-3 0-5 2-5.5 4-2.5.3-4.5 2.4-4.5 5 0 2 1.2 3.7 3 4.5V20h14v-3.5c1.8-.8 3-2.5 3-4.5 0-3.3-2.7-6-6-6-.4-2-2-4-4.5-4zm-3 14v3H6v-3h3zm9 0v3h-3v-3h3z"/></svg>
-          <div><div class="t">Linux</div><div class="a">64-BIT · X86_64</div></div>
+      <article class="dl reveal" data-os="linux">
+        <span class="spot"></span>
+        <div class="dl-head">
+          <span class="dl-ico">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3c-3 0-5 2-5.5 4-2.5.3-4.5 2.4-4.5 5 0 2 1.2 3.7 3 4.5V20h14v-3.5c1.8-.8 3-2.5 3-4.5 0-3.3-2.7-6-6-6-.4-2-2-4-4.5-4zm-3 14v3H6v-3h3zm9 0v3h-3v-3h3z"/></svg>
+          </span>
+          <span class="dl-title"><span class="n">Linux</span><span class="a">64-BIT · X86_64</span></span>
         </div>
-        <div class="dl-size">大小 <b id="sz-linux">160 MB</b></div>
-        <div class="cg-meta">v0.1.7 · x86_64，解压后需 chmod +x 再运行<br>SHA256 <code>6483E106…7709</code><button class="cg-copy" type="button" data-copy="6483E106F7E114EC8A911CF26AF0F68830B446C0FC3C3C30E194FE1FC35F7709">复制</button></div>
-        <a class="btn btn-primary" href="https://github.com/chengyili-studio/chengyili/releases/download/v0.1.7/Chengyili-Demo-linux.zip">下载 Linux 版</a>
-        <a class="btn btn-ghost btn-mirror" href="https://1846173796.share.123pan.cn/123pan/UQM6Td-pF1zh" target="_blank" rel="noopener">国内线路（123 云盘）</a>
-      </div>
+        <div class="dl-body">
+          <div class="dl-size">SIZE <b id="sz-linux">160 MB</b></div>
+          <div class="dl-meta">v0.1.7 · x86_64，解压后需 chmod +x 再运行<br />SHA256 <code>6483E106…7709</code><button class="copy" type="button" data-copy="6483E106F7E114EC8A911CF26AF0F68830B446C0FC3C3C30E194FE1FC35F7709">复制</button></div>
+        </div>
+        <div class="dl-actions">
+          <a class="btn btn-primary" href="https://github.com/chengyili-studio/chengyili/releases/download/v0.1.7/Chengyili-Demo-linux.zip">下载 Linux 版</a>
+          <a class="btn btn-ghost btn-mirror" href="https://1846173796.share.123pan.cn/123pan/UQM6Td-pF1zh" target="_blank" rel="noopener">国内线路（123 云盘）</a>
+        </div>
+      </article>
 
-      <div class="dl-card reveal">
-        <div class="dl-top">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15 0 18M12 3c-2.5 2.5-2.5 15 0 18"/></svg>
-          <div><div class="t">Web 网页版</div><div class="a">浏览器即玩</div></div>
+      <article class="dl reveal" data-os="web">
+        <div class="dl-head">
+          <span class="dl-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15 0 18M12 3c-2.5 2.5-2.5 15 0 18"/></svg>
+          </span>
+          <span class="dl-title"><span class="n">Web 网页版</span><span class="a">浏览器即玩</span></span>
         </div>
-        <div class="dl-size">本版本<b>暂未开放</b></div>
-        <div class="cg-meta">网页试玩版正在适配中，当前请使用 Windows / macOS / Linux 桌面版下载游玩。</div>
-        <a class="btn btn-ghost" href="#" aria-disabled="true" style="opacity:.45;pointer-events:none;cursor:not-allowed">网页版暂未开放</a>
-      </div>
+        <div class="dl-body">
+          <div class="dl-size">STATUS <b>暂未开放</b></div>
+          <div class="dl-meta">网页试玩版正在适配中，当前请使用 Windows / macOS / Linux 桌面版下载游玩。</div>
+        </div>
+        <div class="dl-actions">
+          <a class="btn btn-ghost" href="#" aria-disabled="true">网页版暂未开放</a>
+        </div>
+      </article>
 
     </div>
 
-    <div class="note reveal">提示：Windows / macOS / Linux 版内置自动更新器（updater）。启动游戏后会自动比对服务端 manifest 并增量拉取补丁；首次安装解压后直接运行 <b>乘异里Demo</b> 即可；客户端启动后需等待官方开服，方可登录进入常世界。</div>
+    <div class="note" data-reveal>提示：Windows / macOS / Linux 版内置自动更新器（updater）。启动游戏后会自动比对服务端 manifest 并增量拉取补丁；首次安装解压后直接运行 <b>乘异里Demo</b> 即可；客户端启动后需等待官方开服，方可登录进入常世界。</div>
 
-    <div class="cg-mirror reveal">
+    <div class="dl-mirror" data-reveal>
       <b>下载失败怎么办</b>
-      1) 安装包存放于 GitHub Releases，国内直连可能偏慢或中断，建议开启加速工具或更换时段重试；<br>
-      2) 下载完成后用上面的 SHA256 校验文件是否完整（Windows：<code>certutil -hashfile 文件名 SHA256</code>）；<br>
+      1) 安装包存放于 GitHub Releases，国内直连可能偏慢或中断，建议开启加速工具或更换时段重试；<br />
+      2) 下载完成后用上面的 SHA256 校验文件是否完整（Windows：<code>certutil -hashfile 文件名 SHA256</code>）；<br />
       3) 校验不一致说明传输中断，请重新下载，不要解压或运行。
     </div>
 
-    <div class="dl-tips reveal">
-      <div class="dl-tips-head">安装与运行提示</div>
-      <ul class="dl-tip-list">
+    <div class="tips" data-reveal>
+      <div class="tips-head">安装与运行提示</div>
+      <ul>
         <li><b>国内网络下载</b>：GitHub 直连可能超时（504），请点各卡片下方的「国内线路（123 云盘）」，或改用手机热点/开启加速器后重试；两条线路安装包完全一致，SHA256 可校验。</li>
         <li><b>Windows 版</b>：首次运行时可能出现「Windows 已保护你的电脑」SmartScreen 蓝色提示窗口，原因是安装包尚未做代码签名。点击<b>「更多信息」→「仍要运行」</b>即可正常启动。解压后请<b>保留整个文件夹</b>（含 <code>乘异里Demo.exe</code> 与 <code>updater.exe</code>），不要单独把 exe 拖出来运行。</li>
         <li><b>macOS 版</b>：首次打开若提示「无法打开，因为 Apple 无法检查其是否包含恶意软件」或「无法验证开发者」，请在访达（Finder）中<b>右键（或按住 Control 点击）应用图标 → 选择「打开」→ 再次点「打开」</b>确认。完成这一次后即可正常双击启动。</li>
@@ -241,129 +337,179 @@
   </div>
 </section>
 
-<!-- CHANGELOG -->
-<section id="changelog">
+<!-- ========== CHANGELOG ========== -->
+<section class="sec" id="changelog">
   <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="kicker">CHANGELOG</span>
-      <h2>更新日志<em>BUILD LOG</em></h2>
-      <div class="cg-note" style="margin-top:18px">
+    <div class="sec-head" data-reveal>
+      <span class="bg-num">04</span>
+      <span class="chip kicker">CHANGELOG</span>
+      <h2>更新日志<span class="en">BUILD LOG</span></h2>
+      <div class="note" style="margin-top:18px">
         <b>v0.1.7 · 2026-11-08</b>　下载页改版：新增系统自动推荐、安装包版本与 SHA256 校验、
         macOS 通用二进制说明、Web 版首载流量提示，并补全世界设定；按实际工程修正玩法标签、移除角色图鉴、补充开服说明；首页增 QQ 内测群入口；统一网络游戏开服口径，删除与开服状态相矛盾的旧表述
       </div>
       <p>最近版本的重要改动。</p>
     </div>
     <div class="log">
-      <div class="log-item reveal">
-        <div class="v"><span class="tagv">v0.1.7</span><span class="date">LATEST</span></div>
+      <div class="log-item" data-reveal>
+        <div class="log-head"><span class="log-v">v0.1.7</span><span class="log-latest">LATEST</span><span class="log-date">BUILD LOG</span></div>
         <p>查漏硬化：Unit.create 对 attack_class 为 null 的近战型号赋带类型非空 String 报错导致生成即崩，改为 null 回落 ranged；与 ranged_kind 同属近战型号 null 赋值类崩溃。全库 5757 型号扫描零 SCRIPT ERROR。</p>
       </div>
-      <div class="log-item reveal">
-        <div class="v"><span class="tagv">v0.1.6</span></div>
+      <div class="log-item" data-reveal>
+        <div class="log-head"><span class="log-v">v0.1.6</span></div>
         <p>查漏修复：Unit.create 对 ranged_kind 为 null 的近战型号(终末 zhongmo)赋 String 报错导致该型号生成即崩；改为显式 null 时回落默认值 direct。全库 5757 型号 Unit.create 扫描零 SCRIPT ERROR；训练场景端到端冒烟通过。</p>
       </div>
-      <div class="log-item reveal">
-        <div class="v"><span class="tagv">v0.1.5</span></div>
+      <div class="log-item" data-reveal>
+        <div class="log-head"><span class="log-v">v0.1.5</span></div>
         <p>修复模拟训练(歼灭训练)进入后卡死：Unit.create 对带 range_tiles 的型号因 a_base_fan 属性未声明而抛出 SCRIPT ERROR 导致敌人无法生成；补齐 Unit.a_base_fan 声明。</p>
       </div>
-      <div class="log-item reveal">
-        <div class="v"><span class="tagv">v0.1.4</span></div>
+      <div class="log-item" data-reveal>
+        <div class="log-head"><span class="log-v">v0.1.4</span></div>
         <p>雇员界面技能详情范围显示修复：叠加技能自身射程加成(range_bonus)；弹窗自适应高度并裁剪(clip_contents)不再溢出背景板；HexRangeView 尖顶六边形高度适配(y 分母 1.5→2.0)。</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- ========== FOOTER ========== -->
 <footer class="footer">
   <div class="wrap">
-    <div>© 2026 思茅区乘异里游戏工作室（个体工商户）· <b>Chengyili Game Studio</b></div>
-    <div>本页面用于游戏分发与技术展示 · 反馈与建议欢迎联系工作室 · QQ 内测群 <b class="cg-qq">3828328643</b></div>
-  </div>
-
-  <!-- CREDITS -->
-  <div class="wrap credits">
-    <div class="credits-head">制作与素材鸣谢</div>
-    <ul class="credits-list">
-      <li><span class="k">版权</span><span class="v">© 2026 思茅区乘异里游戏工作室（个体工商户）</span></li>
-      <li><span class="k">制作方</span><span class="v">思茅区乘异里游戏工作室</span></li>
-      <li><span class="k">音乐</span><span class="v">MELO AI 音乐平台生成</span></li>
-      <li><span class="k">音效</span><span class="v">部分 UI 音效素材来自 Cinetools Galactica 音效库，依其许可协议使用</span></li>
-    </ul>
+    <div class="footer-watermark" aria-hidden="true">CHENGYILI</div>
+    <div class="footer-top">
+      <p>© 2026 思茅区乘异里游戏工作室（个体工商户）· <b>Chengyili Game Studio</b></p>
+      <p>本页面用于游戏分发与技术展示 · 反馈与建议欢迎联系工作室 · QQ 内测群 <b class="qq">3828328643</b></p>
+    </div>
+    <div class="credits">
+      <div class="credits-head">制作与素材鸣谢</div>
+      <ul>
+        <li><span class="k">版权</span><span class="v">© 2026 思茅区乘异里游戏工作室（个体工商户）</span></li>
+        <li><span class="k">制作方</span><span class="v">思茅区乘异里游戏工作室</span></li>
+        <li><span class="k">音乐</span><span class="v">MELO AI 音乐平台生成</span></li>
+        <li><span class="k">音效</span><span class="v">部分 UI 音效素材来自 Cinetools Galactica 音效库，依其许可协议使用</span></li>
+      </ul>
+    </div>
   </div>
 </footer>
 
-<!-- LIGHTBOX -->
 <div class="lightbox" id="lightbox">
   <span class="x" id="lbClose">×</span>
   <img id="lbImg" src="" alt="预览" />
 </div>
 
-<script src="js/main.js"></script>
 <script>
 (function(){
-  /* 滚动揭示 */
-  var rv = [].slice.call(document.querySelectorAll(".reveal"));
+  var $  = function(s,c){return (c||document).querySelector(s);};
+  var $$ = function(s,c){return [].slice.call((c||document).querySelectorAll(s));};
+  var raf = window.requestAnimationFrame || function(f){return setTimeout(f,16);};
+
+  /* ---- 滚动进度 + 导航吸附态 + 章节高亮 ---- */
+  var bar = $("#scrollbar"), nav = $("#nav"), ticking = false;
+  var navA = $$(".nav-links a");
+  var spyTargets = navA.map(function(a){
+    var id = (a.getAttribute("href") || "").replace("#", "");
+    return id ? document.getElementById(id) : null;
+  });
+  function spy(){
+    var y = window.pageYOffset + 150, cur = -1;
+    for (var i = 0; i < spyTargets.length; i++) {
+      var s = spyTargets[i];
+      if (s && s.offsetTop <= y) cur = i;
+    }
+    navA.forEach(function(a, i){ a.classList.toggle("is-on", i === cur); });
+  }
+  function onScroll(){
+    if (ticking) return; ticking = true;
+    raf(function(){
+      var h = document.documentElement.scrollHeight - window.innerHeight;
+      var p = h > 0 ? Math.min(1, window.pageYOffset / h) : 0;
+      if (bar) bar.style.transform = "scaleX(" + p + ")";
+      if (nav) nav.classList.toggle("is-stuck", window.pageYOffset > 8);
+      spy();
+      ticking = false;
+    });
+  }
+  window.addEventListener("scroll", onScroll, {passive:true});
+  window.addEventListener("resize", onScroll);
+  onScroll();
+
+  /* ---- 滚动揭示（同批错峰） ---- */
+  var rv = $$("[data-reveal]");
   if ("IntersectionObserver" in window) {
     var io = new IntersectionObserver(function(es){
       es.forEach(function(e){
         if (!e.isIntersecting) return;
         var el = e.target, sibs = el.parentNode ? [].slice.call(el.parentNode.children) : [el];
-        var i = Math.min(sibs.indexOf(el), 6);
-        el.style.transitionDelay = (i > 0 ? i * 70 : 0) + "ms";
-        el.classList.add("on");
+        var i = Math.min(Math.max(sibs.indexOf(el), 0), 6);
+        el.style.transitionDelay = (i * 70) + "ms";
+        el.classList.add("in");
         io.unobserve(el);
       });
-    }, { rootMargin: "0px 0px -8% 0px", threshold: 0.08 });
+    }, {rootMargin:"0px 0px -8% 0px", threshold:0.08});
     rv.forEach(function(el){ io.observe(el); });
   } else {
-    rv.forEach(function(el){ el.classList.add("on"); });
+    rv.forEach(function(el){ el.classList.add("in"); });
   }
 
-  /* 平台识别与推荐 */
+  /* ---- 卡片鼠标聚光 ---- */
+  if (window.matchMedia && window.matchMedia("(hover:hover)").matches) {
+    $$(".card, .dl, .genre").forEach(function(card){
+      var sp = card.querySelector(".spot");
+      if (!sp) return;
+      card.addEventListener("pointermove", function(ev){
+        var r = card.getBoundingClientRect();
+        sp.style.setProperty("--mx", (ev.clientX - r.left) + "px");
+        sp.style.setProperty("--my", (ev.clientY - r.top) + "px");
+      }, {passive:true});
+    });
+  }
+
+  /* ---- 平台识别与推荐 ---- */
   var ua = navigator.userAgent, os = null, name = "";
   if (/Windows NT/.test(ua)) { os = "win"; name = "Windows"; }
   else if (/Mac OS X/.test(ua) && !/iPhone|iPad/.test(ua)) { os = "mac"; name = "macOS"; }
   else if (/Android/.test(ua)) { os = "android"; name = "Android"; }
   else if (/Linux/.test(ua)) { os = "linux"; name = "Linux"; }
-  var tip = document.getElementById("cg-uatip");
-  var cards = [].slice.call(document.querySelectorAll(".dl-card"));
-  var map = { win: /Windows/i, mac: /macOS|mac /i, linux: /Linux/i };
-  var hit = null;
-  cards.forEach(function(c){
-    var t = c.textContent || "";
-    if (os && map[os] && map[os].test(t)) hit = c;
-  });
-  if (hit) {
-    hit.classList.add("cg-rec");
-    var top = hit.querySelector(".dl-top") || hit;
+  else if (/iPhone|iPad/.test(ua)) { os = "ios"; name = "iOS"; }
+
+  var tip = $("#uatip");
+  var hit = os ? $('.dl[data-os="' + os + '"]') : null;
+
+  function badge(card){
+    if (!card || card.querySelector(".dl-badge") || !card.classList.contains("dl")) return;
+    card.classList.add("rec");
     var b = document.createElement("span");
-    b.className = "cg-badge";
+    b.className = "dl-badge";
     b.textContent = "推荐";
-    top.appendChild(b);
+    card.appendChild(b);
   }
-  if (tip) {
-    if (hit) {
-      tip.innerHTML = "检测到你在 <b>" + name + "</b>，"
-        + "推荐下载 <b>" + name + " 版</b>。"
-        + "<div class='cg-tip-sub'>下载后请对照卡片上的 SHA256 校验完整性。</div>";
-      tip.style.display = "block";
-    } else if (os === "android") {
-      tip.innerHTML = "检测到你在 <b>Android</b>。移动端建议直接玩 <b>Web 版</b>"
-        + "<div class='cg-tip-sub'>首次加载约 177 MB，请使用 Wi-Fi。</div>";
-      tip.style.display = "block";
-      var wc = null;
-      cards.forEach(function(c){ if (/即开即玩|Web/i.test(c.textContent || "")) wc = c; });
-      if (wc) { wc.classList.add("cg-rec"); }
-    }
+  function showTip(html){
+    if (!tip) return;
+    tip.innerHTML = html;
+    tip.style.display = "block";
   }
 
-  /* 校验码复制 */
-  [].slice.call(document.querySelectorAll(".cg-copy")).forEach(function(btn){
+  if (hit) {
+    badge(hit);
+    showTip("检测到你在 <b>" + name + "</b>，推荐下载 <b>" + name + " 版</b>。"
+      + "<span class='sub'>下载后请对照卡片上的 SHA256 校验完整性。</span>");
+  } else if (os === "android" || os === "ios") {
+    var wc = $('.dl[data-os="web"]');
+    badge(wc);
+    showTip("检测到你在 <b>" + name + "</b>。移动端建议直接玩 <b>Web 版</b>"
+      + "<span class='sub'>首次加载约 175 MB，请使用 Wi-Fi。</span>");
+  }
+
+  /* ---- 校验码复制 ---- */
+  $$(".copy").forEach(function(btn){
     btn.addEventListener("click", function(){
       var v = btn.getAttribute("data-copy") || "";
-      var done = function(){ var o = btn.textContent; btn.textContent = "已复制";
-        setTimeout(function(){ btn.textContent = o; }, 1500); };
+      var done = function(){
+        if (btn.dataset.busy) return;
+        btn.dataset.busy = "1";
+        var o = btn.textContent;
+        btn.textContent = "已复制";
+        setTimeout(function(){ btn.textContent = o; delete btn.dataset.busy; }, 1500);
+      };
       if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(v).then(done, function(){});
       } else {
@@ -372,6 +518,20 @@
         try { document.execCommand("copy"); done(); } catch(e){}
         document.body.removeChild(ta);
       }
+    });
+  });
+
+  /* ---- 图片灯箱（保留） ---- */
+  var lb = $("#lightbox"), lbImg = $("#lbImg"), lbClose = $("#lbClose");
+  function closeLb(){ if (lb) lb.classList.remove("open"); }
+  if (lbClose) lbClose.addEventListener("click", closeLb);
+  if (lb) lb.addEventListener("click", function(e){ if (e.target === lb) closeLb(); });
+  document.addEventListener("keydown", function(e){ if (e.key === "Escape") closeLb(); });
+  $$("[data-zoom]").forEach(function(img){
+    img.addEventListener("click", function(){
+      if (!lb || !lbImg) return;
+      lbImg.src = img.getAttribute("data-zoom") || img.src;
+      lb.classList.add("open");
     });
   });
 })();
