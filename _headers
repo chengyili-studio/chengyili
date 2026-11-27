@@ -9,8 +9,6 @@
   Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'none'; object-src 'none'; upgrade-insecure-requests
 
 # ---------- 静态资源缓存 ----------
-# CSS/JS 走每次回源校验：改版后用户刷新即可见最新样式，
-# 避免旧缓存导致的"样式错乱/像半成品"错觉。HTML 本身也必须每次校验。
 /css/*
   Cache-Control: public, max-age=0, must-revalidate
 
@@ -23,68 +21,8 @@
 /assets/*
   Cache-Control: public, max-age=604800
 
-# ---------- 安装包：强制下载 + 一年期不可变缓存 ----------
+# ---------- Windows 安装包 ----------
 /download/windows/*
   Content-Disposition: attachment
   Cache-Control: public, max-age=31536000, immutable
   X-Content-Type-Options: nosniff
-
-/download/macos/*
-  Content-Disposition: attachment
-  Cache-Control: public, max-age=31536000, immutable
-  X-Content-Type-Options: nosniff
-
-/download/linux/*
-  Content-Disposition: attachment
-  Cache-Control: public, max-age=31536000, immutable
-  X-Content-Type-Options: nosniff
-
-# ---------- Web 在线试玩：必须 inline，切不可加 attachment ----------
-# 若给 /download/web/* 加 attachment，浏览器会下载 HTML 而不是渲染，
-# Godot 网页版将无法在浏览器内运行。
-/download/web/*
-  Content-Disposition: inline
-  Cache-Control: public, max-age=3600
-
-/download/web/index.html
-  Content-Type: text/html; charset=utf-8
-  Cache-Control: public, max-age=600
-
-/download/web/index.js
-  Content-Type: application/javascript; charset=utf-8
-  Cache-Control: public, max-age=3600
-
-/download/web/index.audio.worklet.js
-  Content-Type: application/javascript; charset=utf-8
-  Cache-Control: public, max-age=3600
-
-/download/web/index.audio.position.worklet.js
-  Content-Type: application/javascript; charset=utf-8
-  Cache-Control: public, max-age=3600
-
-# Godot Web 构建的 wasm 必须显式声明 MIME，否则编译失败
-/download/web/index.wasm
-  Content-Type: application/wasm
-  Content-Disposition: inline
-  Cache-Control: public, max-age=31536000, immutable
-
-/download/web/index.pck
-  Content-Type: application/octet-stream
-  Content-Disposition: inline
-  Cache-Control: public, max-age=31536000, immutable
-
-/download/web/index.png
-  Content-Type: image/png
-  Cache-Control: public, max-age=604800
-
-/download/web/index.icon.png
-  Content-Type: image/png
-  Cache-Control: public, max-age=604800
-
-/download/web/index.apple-touch-icon.png
-  Content-Type: image/png
-  Cache-Control: public, max-age=604800
-
-# ---------- 兜底：任意 wasm 一律 application/wasm ----------
-*.wasm
-  Content-Type: application/wasm
