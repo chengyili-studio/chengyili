@@ -1,6 +1,6 @@
-# SHA256SUMS — 乘异里 / Chengyili v0.2.65
+# SHA256SUMS — 乘异里 / Chengyili v0.2.66
 # 生成时间: 2026-11-28   校验方式: sha256sum -c SHA256SUMS.txt
 # 当前仅分发 Windows 轻量启动器；游戏本体由启动器从国内分片源下载后校验。
 
-1a6326ff37cae8d3940a8a308f129ee95b9e1b8d4e2fa5caf4e30423dc8ec89d  download/windows/乘异里启动器_v0.2.65_win64.exe
+452c6ff42500a97bbe28dbc44ae4010db6df677cc2927b27cec10adb6f37ae15  download/windows/乘异里启动器_v0.2.66_win64.exe
 48c4a2647eba50b8a50590bf68509cc2a25a20e7c72684c0ddd74bd6525019c1  download/windows/Demo_win64.zip
