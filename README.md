@@ -3,22 +3,22 @@
 「乘异里」Demo 安装包分发仓库。
 
 - 游戏为**网络游戏**，需官方开服后方可登录，单机模式下无法开局。
-- 版本：Demo 0.1.0 / 页面 v0.1.7
+- 页面版本：v0.2.64
+- 当前仅提供 Windows 轻量启动器；游戏本体由启动器内下载、校验并安装。
 
 ## 下载
 
 | 平台 | 文件 | 大小 |
 | --- | --- | --- |
-| Windows 64-bit | [Chengyili-Demo-win64.zip](https://github.com/chengyili-studio/chengyili/releases/download/v0.1.7/Chengyili-Demo-win64.zip) | 94.5 MB |
-| macOS (Universal) | [Chengyili-Demo-mac.zip](https://github.com/chengyili-studio/chengyili/releases/download/v0.1.7/Chengyili-Demo-mac.zip) | 194 MB |
-| Linux x86_64 | [Chengyili-Demo-linux.zip](https://github.com/chengyili-studio/chengyili/releases/download/v0.1.7/Chengyili-Demo-linux.zip) | 159.7 MB |
+| Windows 64-bit | [乘异里启动器_v0.2.64_win64.exe](https://github.com/chengyili-studio/chengyili/releases/download/v0.2.64/_v0.2.64_win64.exe) | 221.6 MB |
 
-官网页面：https://chengyili-studio.github.io/chengyili/
+国内线路：https://pan.quark.cn/s/3d916e5b2e8a
+
+官网页面：https://chengyili.pages.dev/
 
 ## 校验
 
 | 文件 | SHA256 |
 | --- | --- |
-| win64 | A557584EA628AAEE951C37F553C7C790BA08BE68344C0A95166C9918316A48AF |
-| mac | 2CBEC38524B23085882496E918FD6AA66F419D1CC757E1C5C90D5592A9FD3B98 |
-| linux | 6483E106F7E114EC8A911CF26AF0F68830B446C0FC3C3C30E194FE1FC35F7709 |
+| 乘异里启动器_v0.2.64_win64.exe | 61bb671ca3fe5e466104fc977ef184a70b5385567ab2fc612b25d6154c359553 |
+| Demo_win64.zip | 48c4a2647eba50b8a50590bf68509cc2a25a20e7c72684c0ddd74bd6525019c1 |
